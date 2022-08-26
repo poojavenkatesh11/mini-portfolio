@@ -373,3 +373,19 @@ body.dark-theme {
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
 }
+
+/* Scroll-Bar */
+::-webkit-scrollbar{
+    width: 0.6rem;
+    border-radius: .5rem;
+    background-color: hsl(var(--hue), 8%, 66%);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: hsl(var(--hue), 8%, 54%);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(var(--hue), 8%, 44%);
+}
