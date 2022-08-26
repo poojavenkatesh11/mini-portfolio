@@ -361,3 +361,15 @@ body.dark-theme {
 .projects__card:hover .projects__modal{
     bottom: 0;
 }
+
+/* Skills */
+
+
+/* Footer */
+.footer__copy{
+    display: block;
+    margin: 2.5rem 0 2rem;
+    text-align: center;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+}
