@@ -106,6 +106,7 @@ body.dark-theme {
 }
 
 /* Color change in some parts of the website, in light-theme */
+
 .dark-theme .button__gray {
     background-color: var(--container-color);
 }
@@ -152,7 +153,7 @@ body.dark-theme {
 /* Profile */
 .profile {
     position: relative;
-    padding-top: 3.5;
+    padding-top: 3.5rem;
 }
 
 .profile__container {
@@ -190,7 +191,6 @@ body.dark-theme {
     display: grid;
     place-items: center;
     margin-bottom: .75rem;
-    margin-top: 1rem;
 }
 
 .profile__name {
@@ -370,7 +370,6 @@ body.dark-theme {
 }
 
 /* Skills */
-/*=============== SKILLS ===============*/
 .skills__content {
     row-gap: 3.5rem;
 }
@@ -413,6 +412,19 @@ body.dark-theme {
     font-size: var(--smaller-font-size);
 }
 
+/* Hide and show projects & skills */
+.filters [data-content]{
+    display: none;
+}
+
+.filters__active[data-content]{
+    display: grid;
+}
+
+/* Activate button filter */
+.filter-tab-active{
+    background-color: var(--body-color);
+}
 
 /* Footer */
 .footer__copy {
@@ -425,7 +437,7 @@ body.dark-theme {
 
 /* Scroll-Bar */
 ::-webkit-scrollbar {
-    width: 0.6rem;
+    width: .6rem;
     border-radius: .5rem;
     background-color: hsl(var(--hue), 8%, 66%);
 }
