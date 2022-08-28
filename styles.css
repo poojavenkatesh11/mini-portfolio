@@ -172,6 +172,12 @@ body.dark-theme {
   width: 75px;
 }
 
+.profile__myself{
+  text-align: center;
+  font-weight: 200;
+  font-size: var(--small-font-size);
+}
+
 .profile__border {
   border: 3.5px solid var(--first-color);
   justify-self: center;
