@@ -1,23 +1,22 @@
-/*  Filter Tabs */
+/*=============== FILTERS TABS ===============*/
 const tabs = document.querySelectorAll('[data-target]'),
       tabContents = document.querySelectorAll('[data-content]')
 
-      tabs.forEach(tab =>{
-        tab.addEventListener('click', () =>{
-            const target = document.querySelector(tab.dataset.target)
-    
-            tabContents.forEach(tc =>{
-                tc.classList.remove('filters__active')
-            })
-            target.classList.add('filters__active')
-    
-            tabs.forEach(t =>{
-                t.classList.remove('filter-tab-active')
-            })
-            tab.classList.add('filter-tab-active')
+tabs.forEach(tab =>{
+    tab.addEventListener('click', () =>{
+        const target = document.querySelector(tab.dataset.target)
+
+        tabContents.forEach(tc =>{
+            tc.classList.remove('filters__active')
         })
+        target.classList.add('filters__active')
+
+        tabs.forEach(t =>{
+            t.classList.remove('filter-tab-active')
+        })
+        tab.classList.add('filter-tab-active')
     })
-    
+})
 
 /*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById('theme-button')
@@ -34,10 +33,10 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moo
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
-    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-    themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
-  }
+  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+}
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
@@ -49,7 +48,7 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
-/*  Scroll Reveal Animations  */ 
+/*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
