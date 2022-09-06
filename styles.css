@@ -446,7 +446,7 @@ body.dark-theme {
 }
 
 .edu__title {
-  font-size: var(--h3-font-size);
+  font-size: 20px;
   margin-bottom: .75rem;
 }
 
@@ -525,6 +525,11 @@ body.dark-theme {
     justify-content: center;
   }
 
+  .edu__content {
+    grid-template-columns: 332px;
+    justify-content: center;
+  }
+
   .filters__content {
     width: 400px;
     margin: 3rem auto;
@@ -535,6 +540,10 @@ body.dark-theme {
   .projects__content,
   .skills__content {
     grid-template-columns: repeat(2, 332px);
+  }
+
+  .edu__content{
+    grid-template-columns: repeat(2, 350px);
   }
 
   .skills__content {
@@ -593,6 +602,10 @@ body.dark-theme {
   .skills__title {
     font-size: var(--normal-font-size);
     margin-bottom: 2.5rem;
+  }
+
+  .edu__content {
+    gap: 2rem 3rem;
   }
 
   .footer__copy {
