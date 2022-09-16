@@ -361,6 +361,17 @@ body.dark-theme {
   padding: .5rem;
 }
 
+.more__button{
+  padding: 0.5rem 3rem 0;
+  /* top-sides-bottom  */
+}
+
+.projects__more{
+  width: 200px;
+  height: 50px;
+  text-align: center;
+}
+
 .projects__card:hover .projects__modal {
   bottom: 0;
 }
@@ -597,6 +608,17 @@ body.dark-theme {
   }
   .projects__modal {
     padding: 1.5rem;
+  }
+
+  .more__button{
+    padding: 0.5rem 12rem 0;
+    /* top-sides-bottom  */
+  }
+  
+  .projects__more{
+    width: 250px;
+    height: 50px;
+    justify-content: center;
   }
 
   .skills__title {
