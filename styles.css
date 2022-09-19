@@ -361,19 +361,13 @@ body.dark-theme {
   padding: .5rem;
 }
 
-.more__button{
-  padding: 0.5rem 3rem 0;
-  /* top-sides-bottom  */
-}
-
-.projects__more{
-  width: 200px;
-  height: 50px;
-  text-align: center;
-}
-
 .projects__card:hover .projects__modal {
   bottom: 0;
+}
+
+.more__button{
+  width: 36rem;
+  padding-left: 250px;
 }
 
 /*=============== SKILLS ===============*/
@@ -545,6 +539,11 @@ body.dark-theme {
     width: 400px;
     margin: 3rem auto;
   }
+
+  .more__button{
+    width: 16.5rem;
+    padding-left: 3.5rem;
+  }
 }
 
 @media screen and (min-width: 776px) {
@@ -608,17 +607,6 @@ body.dark-theme {
   }
   .projects__modal {
     padding: 1.5rem;
-  }
-
-  .more__button{
-    padding: 0.5rem 12rem 0;
-    /* top-sides-bottom  */
-  }
-  
-  .projects__more{
-    width: 250px;
-    height: 50px;
-    justify-content: center;
   }
 
   .skills__title {
