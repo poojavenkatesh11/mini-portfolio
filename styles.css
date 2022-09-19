@@ -516,6 +516,11 @@ body.dark-theme {
   .skills__box {
     column-gap: 1rem;
   }
+
+  .more__button{
+    width: 280px;
+    padding-left: 40px;
+  }
 }
 
 /* For medium devices */
@@ -554,6 +559,11 @@ body.dark-theme {
   .skills__content {
     justify-content: center;
     column-gap: 3rem;
+  }
+
+  .more__button{
+    width: 34.5rem;
+    padding-left: 12rem;
   }
 }
 
