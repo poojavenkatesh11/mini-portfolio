@@ -365,11 +365,6 @@ body.dark-theme {
   bottom: 0;
 }
 
-.more__button{
-  width: 36rem;
-  padding-left: 250px;
-}
-
 /*=============== SKILLS ===============*/
 .skills__content {
   row-gap: 3.5rem;
@@ -607,6 +602,11 @@ body.dark-theme {
   }
   .projects__modal {
     padding: 1.5rem;
+  }
+
+  .more__button{
+    width: 36rem;
+    padding-left: 250px;
   }
 
   .skills__title {
