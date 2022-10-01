@@ -636,6 +636,15 @@ body.dark-theme {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
+  .profile__myself{
+    /* padding-left: 5rem; */
+    display: grid;
+    justify-items: center;
+  }
+  .profile__myself p{
+    max-width: 80%;
+  }
+  
   .projects__content {
     grid-template-columns: 332px;
     justify-content: center;
@@ -651,10 +660,24 @@ body.dark-theme {
     margin: 3rem auto;
   }
 
-  .more__button{
-    width: 16.5rem;
-    padding-left: 3.5rem;
+  .more-projects{
+   width: 100%; 
+   height: 100%;
+   display: grid;
+   justify-content: center;
   }
+  
+  .projects__more{
+    background: hsl(207, 90%, 61%);
+    color: #fff;
+    width: 250px;
+    border-radius: 7.5px;
+    font-size: .75rem;
+    text-align: center;
+    padding: 10px;
+  }
+
+  
 }
 
 @media screen and (min-width: 776px) {
