@@ -760,10 +760,12 @@ body.dark-theme {
     padding: 1.5rem;
   }
 
-  .more__button{
-    width: 36rem;
-    padding-left: 250px;
-  }
+  .more-projects{
+    width: 217%; 
+    height: 100%;
+    display: grid;
+    justify-content: center;
+   }
 
   .skills__title {
     font-size: var(--normal-font-size);
