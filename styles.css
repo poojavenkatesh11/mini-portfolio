@@ -695,10 +695,22 @@ body.dark-theme {
     column-gap: 3rem;
   }
 
-  .more__button{
-    width: 34.5rem;
-    padding-left: 12rem;
-  }
+  .more-projects{
+    width: 208%; 
+    height: 100%;
+    display: grid;
+    justify-content: center;
+   }
+   
+   .projects__more{
+     background: hsl(207, 90%, 61%);
+     color: #fff;
+     width: 300px;
+     border-radius: 7.5px;
+     font-size: 1.25rem;
+     text-align: center;
+     padding: 10px;
+   }
 }
 
 /* For large devices */
