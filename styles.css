@@ -525,8 +525,9 @@ body.dark-theme {
   }
 
   .projects__button{
-    width: 45px;
+    width: 35px;
     height: 35px;
+    justify-content: center;
   }
 
   .skills__box {
