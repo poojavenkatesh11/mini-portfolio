@@ -499,7 +499,7 @@ body.dark-theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 396px) {
   .container {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -513,14 +513,66 @@ body.dark-theme {
     row-gap: 1rem;
   }
 
+  .projects__content{
+    display: grid;
+    max-width: 396px;
+    padding-left: 1.5rem;
+    justify-content: center;
+  }
+  
+  .projects__card{
+    max-width: 90%;
+  }
+
+  .projects__button{
+    width: 45px;
+    height: 35px;
+  }
+
   .skills__box {
     column-gap: 1rem;
   }
 
-  .more__button{
-    width: 280px;
-    padding-left: 40px;
+  .edu__content{
+    max-width: 396px;
+    padding-left: 3rem;
   }
+
+  .edu__card{
+    max-width: 80%;
+  }
+
+  .edu__title{
+    font-size: .65rem;
+  }
+
+  .edu__subtitle{
+    font-size: .5rem;
+  }
+
+  .edu__button{
+    width: 40px;
+    height: 30px;
+    justify-content: center;
+  }
+
+  .projects__more{
+    background: hsl(207, 90%, 61%);
+    color: #fff;
+    width: 120px;
+    height: 35px;
+    border-radius: 7.5px;
+    font-size: .65rem;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .more-projects{
+    display: grid;
+    max-width: 90%;
+    justify-content: center;
+  }
+
 }
 
 @media screen and (max-width: 575px) {
