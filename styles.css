@@ -508,6 +508,18 @@ body.dark-theme {
   .profile__info {
     column-gap: 1.5rem;
   }
+
+  .profile__myself{
+    width: 100%;
+    padding-right: 50px;
+  }
+  
+  .profile__myself p{
+    /* width: 90%; */
+    font-size: .75rem;
+    
+  }
+
   .profile__buttons {
     flex-direction: column;
     row-gap: 1rem;
@@ -515,13 +527,13 @@ body.dark-theme {
 
   .projects__content{
     display: grid;
-    max-width: 396px;
-    padding-left: 1.5rem;
+    max-width: 100%;
+    padding-left: .5rem;
     justify-content: center;
   }
   
   .projects__card{
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .projects__button{
@@ -560,17 +572,14 @@ body.dark-theme {
   .projects__more{
     background: hsl(207, 90%, 61%);
     color: #fff;
-    width: 120px;
-    height: 35px;
-    border-radius: 7.5px;
-    font-size: .65rem;
-    text-align: center;
-    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    /* max-width: 70%; */
   }
 
   .more-projects{
     display: grid;
-    max-width: 90%;
+    max-width: 50%;
     justify-content: center;
   }
 
@@ -580,6 +589,7 @@ body.dark-theme {
   .profile__myself{
     padding-left: 5rem;
   }
+
   .profile__myself p{
     max-width: 80%;
   }
