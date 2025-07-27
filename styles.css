@@ -129,10 +129,12 @@ body.dark-theme {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
+/* === Override to make the layout full width === */
 .container {
-  max-width: 968px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .grid {
@@ -146,6 +148,11 @@ body.dark-theme {
   padding-top: 3.5rem;
 }
 
+.profile {
+  position: relative;
+  padding-top: 3.5rem;
+}
+
 .profile__container {
   row-gap: 2rem;
 }
@@ -154,23 +161,25 @@ body.dark-theme {
   display: grid;
   text-align: center;
 }
-
 .profile__perfil {
   width: 100px;
   height: 100px;
-  background: linear-gradient(180deg, 
-              hsla(var(--hue), var(--sat), var(--lig), 1) 0%, 
-              hsla(var(--hue), var(--sat), var(--lig), .2) 100%);
   border-radius: 50%;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  background-color: #ccc; /* Optional fallback background */
 }
 
 .profile__perfil img {
-  width: 75px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
+
 
 .profile__myself{
   font-size: var(--small-font-size);
@@ -314,114 +323,220 @@ body.dark-theme {
 
 .filters__button:hover {
   background-color: var(--body-color);
+} 
+
+/*=============== PROJECTS (FINAL FIX LIKE SKILLS) ===============*/
+
+/* Hide projects by default if using filter tabs */
+#projects {
+  display: none;
 }
 
-/*=============== PROJECTS ===============*/
-.projects__card {
+/* When active tab is projects, show it as grid */
+.filters__active#projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns for 3 cards */
+  gap: 2.5rem;                             /* spacing between cards */
+  width: 100%;
+  max-width: 1300px;                       /* prevents overly wide stretch */
+  margin: 0 auto;                          /* center content block */
+  padding: 0 2%;                           /* side padding */
+}
+
+/* Each project card */
+#projects .projects__card {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
+  height: 280px;                           /* rectangular */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
-.projects__card img {
+/* Hover effect */
+#projects .projects__card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Images inside card */
+#projects .projects__card img {
   width: 100%;
   height: 100%;
+  object-fit: cover;                       /* makes image cover fully */
+  display: block;
 }
 
-.projects__modal {
+/* Overlay modal */
+#projects .projects__modal {
   position: absolute;
   width: 100%;
   height: 100%;
   bottom: -100%;
   left: 0;
-  background: linear-gradient(180deg, 
-              hsla(var(--hue), 24%, 40%, .3) 0%, 
+  background: linear-gradient(180deg,
+              hsla(var(--hue), 24%, 40%, .3) 0%,
               hsla(var(--hue), 24%, 4%, 1) 95%);
   display: grid;
   align-items: flex-end;
   padding: 1.5rem 1.25rem;
-  transition: .3s;
+  transition: bottom 0.3s ease;
 }
 
-.projects__subtitle, 
-.projects__title {
+/* Text styles */
+#projects .projects__subtitle,
+#projects .projects__title {
   color: #fff;
 }
 
-.projects__subtitle {
+#projects .projects__subtitle {
   font-size: var(--smaller-font-size);
 }
 
-.projects__title {
-  font-size: var(--h3-font-size);
+#projects .projects__title {
+  font-size: calc(var(--h3-font-size) + 2px);
   margin-bottom: .75rem;
 }
 
-.projects__button {
+#projects .projects__button {
   padding: .5rem;
 }
 
-.projects__card:hover .projects__modal {
+/* Show overlay on hover */
+#projects .projects__card:hover .projects__modal {
   bottom: 0;
 }
 
-/*=============== SKILLS ===============*/
-.skills__content {
-  row-gap: 3.5rem;
+/* ✅ Responsive */
+@media screen and (max-width: 992px) {
+  .filters__active#projects {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+  #projects .projects__card {
+    height: 240px;
+  }
 }
 
-.skills__title {
+@media screen and (max-width: 600px) {
+  .filters__active#projects {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
+  }
+  #projects .projects__card {
+    height: 200px;
+  }
+}
+
+/*=============== SKILLS (FINAL FIX) ===============*/
+
+/* Hide skills section by default (keeps filter tabs working) */
+#skills {
+  display: none;
+}
+
+/* When active tab is skills, use flex layout */
+.filters__active#skills {
+  display: flex;
+  justify-content: space-around;   /* Spread sections evenly */
+  align-items: flex-start;
+  flex-wrap: wrap;                 /* Keeps it responsive */
+  gap: 3rem;
+  width: 100%;
+}
+
+/* Individual skill areas */
+#skills .skills__area {
+  flex: 1;
+  min-width: 250px;                /* Ensures they don't shrink too much */
+  background: transparent;
+  padding: 0 10px;
+}
+
+/* Titles */
+#skills .skills__title {
   font-size: var(--h3-font-size);
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.skills__box {
+/* Skills box inside each area */
+#skills .skills__box {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   justify-content: center;
-  column-gap: 3rem;
 }
 
-.skills__group {
-  display: grid;
-  align-content: flex-start;
-  row-gap: 1rem;
-}
-
-.skills__data {
+/* Groups of skills (kept vertical) */
+#skills .skills__group {
   display: flex;
-  column-gap: .5rem;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.skills__data i {
+/* Individual skill data */
+#skills .skills__data {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+#skills .skills__data i {
   font-size: 1rem;
   color: var(--first-color);
 }
 
-.skills__name {
+/* Skill names and levels */
+#skills .skills__name {
   font-size: var(--normal-font-size);
   font-weight: 500;
   line-height: 18px;
 }
 
-.skills__level {
+#skills .skills__level {
   font-size: var(--smaller-font-size);
 }
 
+/*=============== EDUCATION (MODIFIED RECTANGULAR) ===============*/
 
-/*=============== EDUCATION ===============*/
-.edu__card {
-  position: relative;
+/* Hide education section by default to respect filter tabs */
+#education {
+  display: none;
+}
+
+/* When active tab is education, use flexbox to align horizontally */
+.filters__active#education {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ✅ Education cards - rectangular dimensions */
+#education .edu__card {
+  width: 350px;                   /* wider */
+  height: 220px;                  /* shorter height */
   border-radius: 1rem;
   overflow: hidden;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex: 0 0 auto;
 }
 
-.edu__card img {
+/* ✅ Images inside cards - scale & crop to rectangle */
+#education .edu__card img {
   width: 100%;
   height: 100%;
+  object-fit: cover;              /* crop to fill rectangle */
+  display: block;
+  border-radius: 0;
 }
 
-.edu__modal {
+/* Modal overlay */
+#education .edu__modal {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -434,27 +549,31 @@ body.dark-theme {
   align-items: flex-end;
   padding: 1.5rem 1.25rem;
   transition: .3s;
+  border-radius: 0;
 }
 
-.edu__subtitle, 
-.edu__title {
+/* Titles and subtitles */
+#education .edu__subtitle,
+#education .edu__title {
   color: #fff;
 }
 
-.edu__subtitle {
+#education .edu__subtitle {
   font-size: var(--smaller-font-size);
 }
 
-.edu__title {
+#education .edu__title {
   font-size: 20px;
   margin-bottom: .75rem;
 }
 
-.edu__button {
+/* Button inside modal */
+#education .edu__button {
   padding: .5rem;
 }
 
-.edu__card:hover .edu__modal {
+/* Hover effect */
+#education .edu__card:hover .edu__modal {
   bottom: 0;
 }
 
@@ -471,6 +590,15 @@ body.dark-theme {
 .filter-tab-active {
   background-color: var(--body-color);
 }
+
+/* ✅ Responsive adjustments */
+@media screen and (max-width: 576px) {
+  #education .edu__card {
+    width: 90%;
+    height: 180px; /* rectangular but smaller on mobile */
+  }
+}
+
 
 /*=============== FOOTER ===============*/
 .footer__copy {
@@ -569,20 +697,6 @@ body.dark-theme {
     justify-content: center;
   }
 
-  .projects__more{
-    background: hsl(207, 90%, 61%);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 400;
-    /* max-width: 70%; */
-  }
-
-  .more-projects{
-    display: grid;
-    max-width: 50%;
-    justify-content: center;
-  }
-
 }
 
 @media screen and (max-width: 575px) {
@@ -601,23 +715,6 @@ body.dark-theme {
   .projects__card{
     max-width: 70%;
     justify-self: center;
-  }
-
-  .projects__more{
-    background: hsl(207, 90%, 61%);
-    color: #fff;
-    width: 200px;
-    height: 50px;
-    border-radius: 7.5px;
-    font-size: 1rem;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .more-projects{
-    display: grid;
-    max-width: 100%;
-    justify-content: center;
   }
 
   .edu__content{
